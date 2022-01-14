@@ -19,9 +19,10 @@ public class CarCharger {
      */
     public int getChargingCost(int startHour, int numHours){
         int cost = 0;
+        int total = startHour + numHours
         for (int i = 0; i < numHours; i++){
-            if (startHour+i>23){
-
+            if (total>=24){
+                total -= 24;
             }
             cost += rateTable[startHour+i];
         }
@@ -45,7 +46,7 @@ public class CarCharger {
                 200,40,240,220,220,200,200,180,180,140,100,80,60};
         CarCharger cc = new CarCharger(table);
         System.out.println("Charging costs");
-        System.out.println("12 1, " + cc.getChargingCost(12,1));
+        System.out.println("12, 1, " + cc.getChargingCost(12,1));
         System.out.println("0, 2, " +cc.getChargingCost(0, 2));
         System.out.println("22, 7, " + cc.getChargingCost(22, 7));
         System.out.println("22, 30, " + cc.getChargingCost(22,30));
