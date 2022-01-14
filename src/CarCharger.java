@@ -19,7 +19,7 @@ public class CarCharger {
      */
     public int getChargingCost(int startHour, int numHours){
         int cost = 0;
-        int total = startHour + numHours
+        int total = startHour + numHours;
         for (int i = 0; i < numHours; i++){
             if (total>=24){
                 total -= 24;
